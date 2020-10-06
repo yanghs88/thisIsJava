@@ -52,5 +52,10 @@ public class EnumWeekExample {
             System.out.println("day = " + day);
         }
 
+        Week test = Week.valueOf("test");
+        System.out.println("test = " + test);
+
+
+
     }
 }
