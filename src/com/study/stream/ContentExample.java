@@ -30,16 +30,27 @@ public class ContentExample {
 
         Function<Content, List<Content.Goods>> getGoodsList = Content::getGoodsList;
 
-        Map<Integer, List<List<String>>> collect = contents.stream()
-                .collect(
-                        Collectors.groupingBy(
-                                Content::getNo,
-                                Collectors.mapping(content -> content.getGoodsList()
-                                        .stream()
-                                        .map(goods -> goods.getGoodsNo() + "_0")
-                                        .collect(Collectors.toList()), Collectors.toList())
-                        )
-                );
+//        Map<Integer, List<List<String>>> collect = contents.stream()
+//                .collect(
+//                        Collectors.groupingBy(
+//                                Content::getNo,
+//                                Collectors.mapping(content -> content.getGoodsList()
+//                                        .stream()
+//                                        .map(goods -> goods.getGoodsNo() + "_0")
+//                                        .collect(Collectors.toList()), Collectors.toList())
+//                        )
+//                );
+
+        List<String> collect = contents.stream()
+            .flatMap(content -> content.getGoodsList().stream())
+            .map(goods -> goods.getGoodsNo() + "_0")
+            .collect(Collectors.toList());
+
+        Map<Integer, List<String>> collect1 = contents.stream()
+            .collect(
+                Collectors.toMap(content -> content.getNo(), content -> content.getGoodsList().stream()
+                    .map(goods -> goods.getGoodsNo() + "_0")
+                    .collect(Collectors.toList())));
 
         System.out.println("collect.toString() = " + collect.toString());
 

@@ -26,7 +26,6 @@ public class StreamMain {
         HashMap<String, String> testMap = new HashMap<>();
         testMap.put("test1", "aaa");
         testMap.put("test2", "bbb");
-
         String test3 = testMap.get("test3");
         System.out.println("test3 = " + test3);
 
