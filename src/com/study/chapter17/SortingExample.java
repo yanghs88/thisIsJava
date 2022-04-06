@@ -9,6 +9,8 @@ public class SortingExample {
 
     public static void main(String[] args) {
 
+        int[] test = {5, 3, 2, 1, 4};
+
         IntStream intStream = Arrays.stream(new int[] {5,3,2,1,4});
         intStream.sorted()
                 .forEach(n -> System.out.print(n+ ","));

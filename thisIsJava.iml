@@ -17,5 +17,6 @@
     <orderEntry type="library" name="rxjava-3.0.9" level="project" />
     <orderEntry type="library" name="org.projectlombok:lombok-maven-plugin:1.18.4.0" level="project" />
     <orderEntry type="library" name="io.projectreactor:reactor-core:3.3.14.RELEASE" level="project" />
+    <orderEntry type="library" name="org.apache.commons:commons-math3:3.6.1" level="project" />
   </component>
 </module>
